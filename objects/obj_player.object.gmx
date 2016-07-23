@@ -85,11 +85,11 @@ if (xChange != 0 &amp;&amp; yChange != 0) {
 var nextX = x + xChange * moveSpeed;
 var nextY = y + yChange * moveSpeed;
 
-while (!place_empty(nextX, y)) {
+while (place_meeting(nextX, y, obj_wall)) {
     nextX -= sign(xChange);
 }
 x = nextX;
-while (!place_empty(x, nextY)) {
+while (place_meeting(x, nextY, obj_wall)) {
     nextY -= sign(yChange);
 }
 y = nextY;
@@ -116,7 +116,12 @@ y = nextY;
           <argument>
             <kind>1</kind>
             <string>if (alarm[0] &lt;= 0) {
-    instance_create(x, y - 20, obj_bullet);
+    var xCreate = x + sprite_width / 2;
+    var yCreate = y + sprite_height / 2;
+    var bullet = instance_create(xCreate, yCreate, obj_bullet);
+    bullet.y -= bullet.sprite_height / 2;
+    bullet.direction = point_direction(xCreate, yCreate, mouse_x, mouse_y);
+    bullet.image_angle = bullet.direction;
     alarm[0] = GUN_DELAY;
 }
 </string>
