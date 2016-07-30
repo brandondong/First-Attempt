@@ -15,8 +15,8 @@
     <sprite>sprites\spr_player_left_idle</sprite>
     <sprite>sprites\spr_pistol</sprite>
     <sprite>sprites\spr_pistol_flash</sprite>
-    <sprite>sprites\spr_pistol_bullet</sprite>
     <sprite>sprites\spr_text</sprite>
+    <sprite>sprites\spr_bullet_pistol</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -32,9 +32,11 @@
     <object>objects\obj_menu</object>
     <object>objects\obj_text</object>
     <object>objects\obj_text_exit</object>
+    <object>objects\obj_esc</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
+    <room>rooms\rm_menu_main</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

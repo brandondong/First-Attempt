@@ -25,31 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>open = false;
+            <string>persistent = true;
 
-var yCreate = y;
-var resumeButton = instance_create(x, yCreate, obj_text);
-resumeButton.text = "Resume";
-instance_deactivate_object(resumeButton);
-yCreate += resumeButton.sprite_height;
-menu[0] = resumeButton;
-
-var restartButton = instance_create(x, yCreate, obj_text);
-restartButton.text = "Restart Level";
-instance_deactivate_object(restartButton);
-yCreate += restartButton.sprite_height;
-menu[1] = restartButton;
-
-var controlsButton = instance_create(x, yCreate, obj_text);
-controlsButton.text = "Controls";
-instance_deactivate_object(controlsButton);
-yCreate += controlsButton.sprite_height;
-menu[2] = controlsButton;
-
-var exitButton = instance_create(x, yCreate, obj_text_exit);
-exitButton.text = "Exit Game";
-instance_deactivate_object(exitButton);
-menu[3] = exitButton;
+previous = rm_menu_main;
 </string>
           </argument>
         </arguments>
@@ -72,16 +50,11 @@ menu[3] = exitButton;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>open = !open;
-
-if (open) {
-    for (var i = 0; i &lt; array_length_1d(menu); i++) {
-        instance_activate_object(menu[i]);
-    }
+            <string>if (room == rm_menu_main) {
+    room_goto(previous);
 } else {
-    for (var i = 0; i &lt; array_length_1d(menu); i++) {
-        instance_deactivate_object(menu[i]);
-    }
+    previous = room;
+    room_goto(rm_menu_main);
 }
 </string>
           </argument>
