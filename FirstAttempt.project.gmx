@@ -29,10 +29,10 @@
     <object>objects\obj_wall</object>
     <object>objects\obj_bullet</object>
     <object>objects\obj_gun</object>
-    <object>objects\obj_menu</object>
     <object>objects\obj_text</object>
     <object>objects\obj_text_exit</object>
     <object>objects\obj_esc</object>
+    <object>objects\obj_text_restart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
