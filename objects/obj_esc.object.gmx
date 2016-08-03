@@ -25,9 +25,54 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>persistent = true;
+            <string>CREATE_X = 64;
+CREATE_Y = 96;
 
-previous = rm_menu_main;
+open = false;
+
+yCreate = CREATE_Y;
+
+resumeButton = instance_create(CREATE_X, yCreate, obj_text_resume);
+resumeButton.esc = id;
+instance_deactivate_object(resumeButton);
+yCreate += resumeButton.sprite_height;
+
+restartButton = instance_create(CREATE_X, yCreate, obj_text_restart);
+instance_deactivate_object(restartButton);
+yCreate += restartButton.sprite_height;
+
+mainButton = instance_create(CREATE_X, yCreate, obj_text_main);
+instance_deactivate_object(mainButton);
+yCreate += mainButton.sprite_height;
+
+exitButton = instance_create(CREATE_X, yCreate, obj_text_exit);
+instance_deactivate_object(exitButton);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (open) {
+    draw_set_colour(c_black);
+    draw_rectangle(0, 0, room_width, room_height, 0);
+}
 </string>
           </argument>
         </arguments>
@@ -50,12 +95,7 @@ previous = rm_menu_main;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room == rm_menu_main) {
-    room_goto(previous);
-} else {
-    previous = room;
-    room_goto(rm_menu_main);
-}
+            <string>script_execute(SetEscOpen, !open);
 </string>
           </argument>
         </arguments>

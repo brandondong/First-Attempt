@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-text = "Restart Level";
+text = "Resume";
 </string>
           </argument>
         </arguments>
@@ -50,7 +50,9 @@ text = "Restart Level";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_restart();
+            <string>with (esc) {
+    script_execute(SetEscOpen, false);
+}
 </string>
           </argument>
         </arguments>

@@ -17,9 +17,13 @@
     <sprite>sprites\spr_pistol_flash</sprite>
     <sprite>sprites\spr_text</sprite>
     <sprite>sprites\spr_bullet_pistol</sprite>
+    <sprite>sprites\spr_alien</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\SetEscOpen.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font_menu</font>
     <font>fonts\font_menu_hover</font>
@@ -33,10 +37,11 @@
     <object>objects\obj_text_exit</object>
     <object>objects\obj_esc</object>
     <object>objects\obj_text_restart</object>
+    <object>objects\obj_text_resume</object>
+    <object>objects\obj_text_main</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
-    <room>rooms\rm_menu_main</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
