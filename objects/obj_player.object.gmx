@@ -105,7 +105,7 @@ var yChange = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 // Set move flag for sprite animation
 moved = xChange != 0 || yChange != 0;
 
-script_execute(Move, xChange, yChange, SPEED, REDUCED_SPEED);
+scr_move(xChange, yChange, SPEED, REDUCED_SPEED);
 </string>
           </argument>
         </arguments>

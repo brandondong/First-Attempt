@@ -22,8 +22,8 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\SetEscOpen.gml</script>
-    <script>scripts\Move.gml</script>
+    <script>scripts\scr_set_esc_open.gml</script>
+    <script>scripts\scr_move.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_menu</font>
@@ -40,6 +40,7 @@
     <object>objects\obj_text_restart</object>
     <object>objects\obj_text_resume</object>
     <object>objects\obj_text_main</object>
+    <object>objects\obj_alien</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>

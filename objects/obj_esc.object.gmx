@@ -95,7 +95,7 @@ instance_deactivate_object(exitButton);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(SetEscOpen, !open);
+            <string>scr_set_esc_open(!open);
 </string>
           </argument>
         </arguments>
