@@ -61,8 +61,10 @@ if (direction &lt; 90 || direction &gt; 270) {
 }
 
 radians = direction * pi / 180;
-x += cos(radians) * SPEED;
-y -= sin(radians) * SPEED;
+var nextX = x + cos(radians) * SPEED;
+var nextY = y - sin(radians) * SPEED;
+
+scr_move(nextX, nextY);
 </string>
           </argument>
         </arguments>

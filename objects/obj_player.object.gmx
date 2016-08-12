@@ -105,7 +105,17 @@ var yChange = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 // Set move flag for sprite animation
 moved = xChange != 0 || yChange != 0;
 
-scr_move(xChange, yChange, SPEED, REDUCED_SPEED);
+// Calculate speed
+var moveSpeed = SPEED;
+if (xChange != 0 &amp;&amp; yChange != 0) {
+    moveSpeed = REDUCED_SPEED;
+}
+
+var nextX = x + xChange * moveSpeed;
+var nextY = y + yChange * moveSpeed;
+
+// Take collisions into account
+scr_move(nextX, nextY);
 </string>
           </argument>
         </arguments>

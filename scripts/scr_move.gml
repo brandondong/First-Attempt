@@ -1,22 +1,15 @@
-var xChange = argument0;
-var yChange = argument1;
-
-// Calculate speed
-var moveSpeed = argument2;
-if (xChange != 0 && yChange != 0) {
-    moveSpeed = argument3;
-}
-
-var nextX = x + xChange * moveSpeed;
-var nextY = y + yChange * moveSpeed;
+var nextX = argument0;
+var nextY = argument1;
+var xChange = sign(nextX - x);
+var yChange = sign(nextY - y);
 
 // Check for collisions
 while (place_meeting(nextX, y, obj_wall)) {
-    nextX -= sign(xChange);
+    nextX -= xChange;
 }
 x = nextX;
 
 while (place_meeting(x, nextY, obj_wall)) {
-    nextY -= sign(yChange);
+    nextY -= yChange;
 }
 y = nextY;
